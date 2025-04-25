@@ -1,6 +1,7 @@
 <div>
   <!-- <a href="/tasks"> -->
-  <a routerLink="/tasks">
+  <!-- <a routerLink="/tasks" [class.selected]=""> -->
+  <a routerLink="/tasks" routerLinkActive="selected">
     <img [src]="imagePath()" [alt]="user().name" />
     <span>{{ user().name }}</span>
   </a>
