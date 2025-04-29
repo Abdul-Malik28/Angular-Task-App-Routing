@@ -5,11 +5,14 @@ import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { CardComponent } from "./shared/card/card.component";
 
 export const routes: Routes = [
     {
         path: '', // <your-domain>
         component: NoTaskComponent
+        // redirectTo: '/users/u1',
+        // pathMatch: 'prefix'
     },
     // {
     //     path: 'tasks', // <your-domain>/tasks
