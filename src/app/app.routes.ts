@@ -1,16 +1,19 @@
-import { Routes } from "@angular/router";
+import { CanMatchFn, RedirectCommand, Router, Routes } from "@angular/router";
+import { inject } from "@angular/core";
 
 import { routes as userRoutes } from './users/users.routes';
 import { NoTaskComponent } from "./tasks/no-task/no-task.component";
-import { resolveUserName, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
+import { resolveTitle, resolveUserName, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
+
 
 export const routes: Routes = [
     {
         path: '', // <your-domain>
-        component: NoTaskComponent
+        component: NoTaskComponent,
         // redirectTo: '/users/u1',
-        // pathMatch: 'prefix'
+        // pathMatch: 'prefix',
+        title: 'No task selected'
     },
     // {
     //     path: 'tasks', // <your-domain>/tasks
@@ -25,7 +28,8 @@ export const routes: Routes = [
         },
         resolve: {
             userName: resolveUserName
-        }
+        },
+        title: resolveTitle
     },
     {
         path: '**',
